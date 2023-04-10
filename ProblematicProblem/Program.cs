@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 
 namespace ProblematicProblem
@@ -16,7 +17,12 @@ namespace ProblematicProblem
           Random rng = new Random();  
             
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? Yes/No: ");
-            bool cont = (Console.ReadLine().ToLower() == "yes")? true : false;
+            //bool cont = bool.Parse(Console.ReadLine());
+            if (Console.ReadLine().ToLower() == "yes")
+            {
+                cont = true;
+            } else Environment.Exit(0);
+
             Console.WriteLine();
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
